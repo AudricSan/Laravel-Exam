@@ -1,0 +1,77 @@
+Etape 1 : Analyse
+3 modèles
+2 relations
+de type many to one (1 à N) ou de type many to many (N à N)
+
+==> JEUX VIDÉOS - ACHIEVEMENTS - TYPE DE JEU
+
+Exemple :
+
+[Jeux N <-> N Achivement
+Jeux N <-> N Type de Jeux] 
+
+==>
+
+[
+Jeux => MyAchivement <= Achivement
+Jeux => My Type <= Type de jeux
+]
+
+Réaliser un dictionnaire des données
+
+Games => [
+    GameID => Int,
+    Name => String,
+    Editor => String,
+    date_of_Publish => Date
+]
+
+Achivement => [
+    AchivementID => Int
+    Name => String
+]
+
+Type => [
+    TypeID => Int,
+    Name => String
+]
+
+MyType => [
+    ID => int,
+    game_ID => Int,
+    type_ID => Int,
+]
+
+MyAchivement => [
+    id => Int,
+    game_ID => int,
+    Achivement_ID => int
+]
+
+Etape 2 : Développement
+Créer un projet laravel
+Créer vos différents modèles dans laravel ainsi que les migrations nécessaires à la
+création des tables
+
+N’hésitez pas à tester vos migrations plus d’une fois : supprimer vos tables, faites un php
+artisan migrate : est-ce que vos tables sont correctes?
+Créer les différents contrôleurs et vues nécessaires pour pouvoir faire les opérations de
+CRUD sur vos modèles.
+
+Vous savez quoi faire
+N’oubliez pas, d'abord écrire les relations au niveau du modèle, ajoutez vos routes et puis
+réaliser les différentes méthode de votre contrôleur et testez au fur et à mesure
+Etape 3 : Améliorez l’expérience d’utilisation
+
+Soignez la navigation pour qu’il soit facile de parcourir les différents modèles
+Ajoutez des liens vers vos différents modèles, faites en sorte de montrer les informations des
+modèles liés pour y accéder facilement
+
+Soignez les formulaires pour permettre de faciliter la création et la modification des
+données
+
+Pensez à utiliser des inputs adaptés, à pré-remplir les champs possible, à mettre en place des
+boutons pour réaliser différentes actions
+
+Etape 4 : Ajoutez de nouvelles fonctionnalitées (bonus)
+N’hésitez pas à réaliser des fonctionnalités supplémentaires qui iraient avec votre projet
